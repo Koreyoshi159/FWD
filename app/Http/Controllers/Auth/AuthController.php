@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -28,7 +30,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect('welcome');
+        return redirect('home');
     }
 
     public function login()
@@ -46,10 +48,10 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('welcome');
+            return redirect()->intended('home');
         }
 
-        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
+        return redirect('login')->with('error', 'Oops! You have entered invalid credentials');
     }
 
     public function logout()
@@ -60,6 +62,10 @@ class AuthController extends Controller
 
     public function home()
     {
-        return view('welcome');
+        if(!Auth::user()){
+            return redirect(route('login'));
+        }else {
+            return view('home');
+        }
     }
 }

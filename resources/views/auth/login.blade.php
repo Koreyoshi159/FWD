@@ -31,7 +31,7 @@
                                         <div class="control has-icons-left">
                                             <input type="email" name="email" placeholder="yourname@example.com"
                                                    class="input @error('email') is-danger @enderror"
-                                                   value="{{ old('email') }}" required>
+                                                   value="{{ old('email') }}" required autocomplete="email">
                                             <span class="icon is-small is-left">
                                         <i class="fa fa-envelope"></i>
                                     </span>
