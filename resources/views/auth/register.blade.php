@@ -52,10 +52,10 @@
                     <div class="field">
                         <label class="label" for="password_confirmation">Repeat Password</label>
                         <div class="control">
-                            <input class="input @error('password') is-danger @enderror" type="password"
+                            <input class="input @error('password_confirmation') is-danger @enderror" type="password"
                                    name="password_confirmation" placeholder="Confirm Password">
-                            @error('password')
-                            <p class="help is-danger">{{ $errors->first('password') }}</p>
+                            @error('password_confirmation')
+                            <p class="help is-danger">{{ $errors->first('password_confirmation') }}</p>
                             @enderror
                         </div>
                     </div>
