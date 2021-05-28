@@ -46,8 +46,6 @@ class AuthController extends Controller
             'remember' => 'nullable',
         ]);
 
-        $credentials = $request->only('email', 'password');
-
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             return redirect()->intended('home');
         }

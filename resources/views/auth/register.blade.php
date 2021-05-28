@@ -3,12 +3,11 @@
 @section('title', ('Register'))
 
 @section('script')
-    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/fav_icon.png" type="image/x-icon">
     <!-- Bulma Version 0.9.0-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css"/>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/contact.css">
 @endsection
 
 @section('content')
@@ -24,7 +23,7 @@
                         <label class="label" for="name">Name</label>
                         <div class="control">
                             <input class="input @error('name') is-danger @enderror" type="text" name="name"
-                                   placeholder="Text input" value="{{ old('name') }}">
+                                   placeholder="Name" value="{{ old('name') }}">
                             @error('name')
                             <p class="help is-danger">{{ $errors->first('name') }}</p>
                             @enderror
@@ -34,7 +33,7 @@
                         <label class="label" for="email">Email</label>
                         <div class="control">
                             <input class="input @error('email') is-danger @enderror" type="email" name="email"
-                                   placeholder="Email input" {{ old('email') }}>
+                                   placeholder="Email" {{ old('email') }}>
                             @error('email')
                             <p class="help is-danger">{{ $errors->first('email') }}</p>
                             @enderror
@@ -60,14 +59,14 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="field">
-                        <div class="control">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                I agree to the <a href="#">terms and conditions</a>
-                            </label>
-                        </div>
-                    </div>
+{{--                    <div class="field">--}}
+{{--                        <div class="control">--}}
+{{--                            <label class="checkbox">--}}
+{{--                                <input type="checkbox">--}}
+{{--                                I agree to the <a href="#">terms and conditions</a>--}}
+{{--                            </label>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="field is-grouped">
                         <div class="control">
                             <button class="button is-link">Submit</button>
