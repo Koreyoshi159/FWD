@@ -43,11 +43,12 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
+            'remember' => 'nullable',
         ]);
 
         $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             return redirect()->intended('home');
         }
 

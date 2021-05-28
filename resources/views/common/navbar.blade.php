@@ -14,7 +14,7 @@
             <div class="navbar-start">
                 <a href="/"
                    class="navbar-item {{ Request::path() === '/' ? "is-active" : "" }}">
-                    Home
+                    Dashboard
                 </a>
                 <a href="/contact"
                    class="navbar-item {{ Request::path() === '/contact' ? "is-active" : "" }}">
@@ -28,6 +28,12 @@
                    class="navbar-item {{ Request::path() === '/500' ? "is-active" : "" }}">
                     500
                 </a>
+                @if(Auth::check())
+                <a href="/home"
+                   class="navbar-item {{ Request::path() === '/Home' ? "is-active" : "" }}">
+                    Home
+                </a>
+                @endif
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
