@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,8 @@ Route::post('/register', [AuthController::class, 'storeUser']);
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticate']);
-Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/home', [AuthController::class, 'home'])->name('home');
+Route::resource('home', HomeController::class)->middleware('auth');
+Route::resource('tasks', TaskController::class)->middleware('auth');
+Route::put('/tasks/finished/{task}', [TaskController::class, 'finished'])->middleware('auth');

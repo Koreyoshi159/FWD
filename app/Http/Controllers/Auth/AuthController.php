@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -58,14 +58,5 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect('login');
-    }
-
-    public function home()
-    {
-        if(!Auth::user()){
-            return redirect(route('login'));
-        }else {
-            return view('home');
-        }
     }
 }

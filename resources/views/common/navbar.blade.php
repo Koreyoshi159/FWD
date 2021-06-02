@@ -29,10 +29,14 @@
                     500
                 </a>
                 @if(Auth::check())
-                <a href="/home"
-                   class="navbar-item {{ Request::path() === '/Home' ? "is-active" : "" }}">
-                    Home
-                </a>
+                    <a href="/home"
+                       class="navbar-item {{ Request::path() === '/home' ? "is-active" : "" }}">
+                        Home
+                    </a>
+                    <a href="/tasks"
+                       class="navbar-item {{ Request::path() === '/tasks' ? "is-active" : "" }}">
+                        Task
+                    </a>
                 @endif
             </div>
             <div class="navbar-end">
