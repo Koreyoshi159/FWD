@@ -74,8 +74,10 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        $task->Task::update($this->getValidate($request));
-        return redirect('tasks.index');
+        $finished = isset($request->todo[0]) ? 1 : 0;
+        $task->update(['todo' => $finished]);
+        $task->update($this->getValidate($request));
+        return redirect(route('tasks.index'));
     }
 
     /**
@@ -98,7 +100,7 @@ class TaskController extends Controller
     {
         return request()->validate([
             'task' => 'required | string | max:50',
-            'description' => 'required | string | max:255',
+            'description' => 'nullable | string | max:255',
         ]);
     }
 
