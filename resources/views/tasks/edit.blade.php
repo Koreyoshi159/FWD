@@ -33,7 +33,7 @@
 
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-link" type="submit">Edit</button>
+                        <button class="button is-link" type="submit">Save</button>
                     </div>
                     <div class="control">
                         <a href="{{ route('tasks.index') }}" class="button is-link is-light">Cancel</a>

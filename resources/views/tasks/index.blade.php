@@ -31,7 +31,7 @@
                                       style="display: inline-flex">
                                     @csrf
                                     @method('PUT')
-                                    <button class="button is-small is-success">Approve</button>
+                                    <button class="button is-small is-success">Done</button>
                                 </form>
                             @endif
                             <a href="{{ route('tasks.edit', $task->id) }}" class="button is-small is-info"
