@@ -26,16 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        return view('home');
-=======
         if(!Auth::user()){
             return redirect(route('login'));
         }else {
             $response = Http::get('https://api.publicapis.org/entries')->json();
             return view("home", ['response' => $response['entries']]);
         }
->>>>>>> main
     }
 
     /**
