@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Home;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -24,7 +26,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         return view('home');
+=======
+        if(!Auth::user()){
+            return redirect(route('login'));
+        }else {
+            $response = Http::get('https://api.publicapis.org/entries')->json();
+            return view("home", ['response' => $response['entries']]);
+        }
+>>>>>>> main
     }
 
     /**
