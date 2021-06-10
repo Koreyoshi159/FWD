@@ -60,6 +60,7 @@ class AuthController extends Controller
         return redirect('login');
     }
 
+    // Unused
     public function home()
     {
         if(!Auth::user()){

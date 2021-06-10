@@ -1,0 +1,21 @@
+.hidden {
+    display: none;
+}
+
+.dropdown {
+    width: 100% !important;
+}
+
+.dropdown-trigger {
+    width: 100% !important;;
+}
+
+.dropdown-menu {
+    width: 100% !important;;
+}
+
+.button {
+    display: flex;
+    width: 100%;
+    justify-content: space-between
+}
