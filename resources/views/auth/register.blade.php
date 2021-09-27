@@ -27,6 +27,10 @@
                             @error('name')
                             <p class="help is-danger">{{ $errors->first('name') }}</p>
                             @enderror
+                            <p class="has-text-info">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                Full name here
+                            </p>
                         </div>
                     </div>
                     <div class="field">
@@ -37,6 +41,10 @@
                             @error('email')
                             <p class="help is-danger">{{ $errors->first('email') }}</p>
                             @enderror
+                            <p class="has-text-info">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                Email atleast includes a "@" and end on for example ".com".
+                            </p>
                         </div>
                     </div>
                     <div class="field">
@@ -47,6 +55,10 @@
                             @error('password')
                             <p class="help is-danger">{{ $errors->first('password') }}</p>
                             @enderror
+                            <p class="has-text-info">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                Include capital letter and special characters to make the password more secure.
+                            </p>
                         </div>
                     </div>
                     <div class="field">
@@ -57,16 +69,20 @@
                             @error('password_confirmation')
                             <p class="help is-danger">{{ $errors->first('password_confirmation') }}</p>
                             @enderror
+                            <p class="has-text-info">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                Repeat the password here.
+                            </p>
                         </div>
                     </div>
-{{--                    <div class="field">--}}
-{{--                        <div class="control">--}}
-{{--                            <label class="checkbox">--}}
-{{--                                <input type="checkbox">--}}
-{{--                                I agree to the <a href="#">terms and conditions</a>--}}
-{{--                            </label>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="field">--}}
+                    {{--                        <div class="control">--}}
+                    {{--                            <label class="checkbox">--}}
+                    {{--                                <input type="checkbox">--}}
+                    {{--                                I agree to the <a href="#">terms and conditions</a>--}}
+                    {{--                            </label>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
                     <div class="field is-grouped">
                         <div class="control">
                             <button class="button is-link">Submit</button>

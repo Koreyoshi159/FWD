@@ -14,7 +14,7 @@
     width: 100% !important;;
 }
 
-.button {
+.button-max {
     display: flex;
     width: 100%;
     justify-content: space-between
